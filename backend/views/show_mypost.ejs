@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>your all posts</h1>
+    <% for(let post of posts){ %>
+        <h4><%=post.username  %></h4>
+        <h4><%=post.title  %></h4>
+        <h4><%=post.describe  %></h4>
+         <button><a href="/user/delete-post/<%= post.id %>">Delete</a></button>
+        <% } %>
+</body>
+</html>

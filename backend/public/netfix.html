@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Netflix Clone</title>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<!-- Hero Section -->
+<nav class="navbar">
+  <div class="logo">COLLEGEINFO</div>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search Collegeinfo" />
+    <button onclick="handleSearch()">Search</button>
+  </div>
+  <div class="nav-icons">
+    <div class="icon-item">
+      <i class="bi bi-pencil-square"></i>
+      <span>Post</span>
+    </div>
+    <div class="icon-item">
+      <i class="bi bi-heart-fill"></i>
+      <span>Likes</span>
+    </div>
+    <div class="icon-item notification">
+      <i class="bi bi-bell-fill"></i>
+      <span class="badge">3</span>
+      <span>Notifications</span>
+    </div>
+    <div class="icon-item dropdown" onclick="toggleDropdown()">
+      <i class="bi bi-person-circle"></i>
+      <span>Profile</span>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#">My Profile</a>
+        <a href="#">Settings</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="content">
+  <h1>A social platform built for college students.</h1>
+  <h2>Your college, your community — all in one place.</h2>
+  <p>Verified campus communities, real-time chats, and shared experiences.</p>
+</div>
+<!-- college -->
+<section class="trending-section">
+  <h2>Goverment Engneering College Ajmer</h2>
+  <div class="red-line1"></div>
+</section>
+<section class="latest-eca">
+  <h2>Information</h2>
+  <div class="tabs">
+    <button onclick="filterNews('all')" class="tab active">All</button>
+    <button onclick="filterNews('news')" class="tab">News</button>
+    <button onclick="filterNews('tender')" class="tab">Tenders</button>
+    <button onclick="filterNews('notice')" class="tab">Notices</button>
+    <button onclick="toggleVisibility()" class="toggle-btn" id="toggleBtn">Hide</button>
+  </div>
+  <div class="scroll-container" id="scrollContainer">
+    <ul id="news-list" class="news-list"></ul>
+  </div>
+</section>
+<!-- more -->
+<section class="trending-section">
+  <h2>New Posts of Followers</h2>
+  <div class="red-line"></div>
+  <div class="slider-wrapper">
+      <button class="slider-btn left" id="prevBtn">&#10094;</button>
+      <div class="slider" id="slider">
+        <div class="slide">
+          <div class="post-container">
+            <div class="post-header">
+              <img src="Screenshot 2025-05-04 123903.png" alt="Profile" class="avatar">
+              <div class="user-info">
+                <span class="username">kunalsahu</span>
+                <span class="time">16 h</span>
+              </div>
+              <i class="bi bi-three-dots menu-icon"></i>
+            </div>
+            <div class="post-image">
+              <img src="Screenshot 2025-05-04 123903.png" alt="Post content">
+            </div>
+            <div class="post-actions">
+              <i id="likeIcon" class="bi bi-heart"></i>
+              <i class="bi bi-chat"></i>
+              <i class="bi bi-send"></i>
+              <i class="bi bi-bookmark save-icon"></i>
+            </div>
+            <div class="likes">Liked by <strong>princesharma</strong> and <strong>others</strong></div>
+            <div id="commentList" class="comment-list"></div>
+            <div class="caption">
+              <strong>kunalsahu</strong> jai shree ram</div>      
+            <div class="timestamp" id="timestamp"></div>
+            <div class="post-comment-box">
+              <input type="text" id="commentInput" placeholder="Add a comment...">
+              <button onclick="submitComment()">Post</button>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="post-container">
+            <div class="post-header">
+              <img src="Screenshot 2025-05-04 123903.png" alt="Profile" class="avatar">
+              <div class="user-info">
+                <span class="username">kunalsahu</span>
+                <span class="time">16 h</span>
+              </div>
+              <i class="bi bi-three-dots menu-icon"></i>
+            </div>
+            <div class="post-image">
+              <img src="Screenshot 2025-05-04 123903.png" alt="Post content">
+            </div>
+            <div class="post-actions">
+              <i id="likeIcon" class="bi bi-heart"></i>
+              <i class="bi bi-chat"></i>
+              <i class="bi bi-send"></i>
+              <i class="bi bi-bookmark save-icon"></i>
+            </div>
+            <div class="likes">Liked by <strong>princesharma</strong> and <strong>others</strong></div>
+            <div id="commentList" class="comment-list"></div>
+            <div class="caption">
+              <strong>kunalsahu</strong> jai shree ram</div>      
+            <div class="timestamp" id="timestamp"></div>
+            <div class="post-comment-box">
+              <input type="text" id="commentInput" placeholder="Add a comment...">
+              <button onclick="submitComment()">Post</button>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="post-container">
+            <div class="post-header">
+              <img src="Screenshot 2025-05-04 123903.png" alt="Profile" class="avatar">
+              <div class="user-info">
+                <span class="username">kunalsahu</span>
+                <span class="time">16 h</span>
+              </div>
+              <i class="bi bi-three-dots menu-icon"></i>
+            </div>
+            <div class="post-image">
+              <img src="Screenshot 2025-05-04 123903.png" alt="Post content">
+            </div>
+            <div class="post-actions">
+              <i id="likeIcon" class="bi bi-heart"></i>
+              <i class="bi bi-chat"></i>
+              <i class="bi bi-send"></i>
+              <i class="bi bi-bookmark save-icon"></i>
+            </div>
+            <div class="likes">Liked by <strong>princesharma</strong> and <strong>others</strong></div>
+            <div id="commentList" class="comment-list"></div>
+            <div class="caption">
+              <strong>kunalsahu</strong> jai shree ram</div>      
+            <div class="timestamp" id="timestamp"></div>
+            <div class="post-comment-box">
+              <input type="text" id="commentInput" placeholder="Add a comment...">
+              <button onclick="submitComment()">Post</button>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="post-container">
+            <div class="post-header">
+              <img src="Screenshot 2025-05-04 123903.png" alt="Profile" class="avatar">
+              <div class="user-info">
+                <span class="username">kunalsahu</span>
+                <span class="time">16 h</span>
+              </div>
+              <i class="bi bi-three-dots menu-icon"></i>
+            </div>
+            <div class="post-image">
+              <img src="Screenshot 2025-05-04 123903.png" alt="Post content">
+            </div>
+            <div class="post-actions">
+              <i id="likeIcon" class="bi bi-heart"></i>
+              <i class="bi bi-chat"></i>
+              <i class="bi bi-send"></i>
+              <i class="bi bi-bookmark save-icon"></i>
+            </div>
+            <div class="likes">Liked by <strong>princesharma</strong> and <strong>others</strong></div>
+            <div id="commentList" class="comment-list"></div>
+            <div class="caption">
+              <strong>kunalsahu</strong> jai shree ram</div>      
+            <div class="timestamp" id="timestamp"></div>
+            <div class="post-comment-box">
+              <input type="text" id="commentInput" placeholder="Add a comment...">
+              <button onclick="submitComment()">Post</button>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="post-container">
+            <div class="post-header">
+              <img src="Screenshot 2025-05-04 123903.png" alt="Profile" class="avatar">
+              <div class="user-info">
+                <span class="username">kunalsahu</span>
+                <span class="time">16 h</span>
+              </div>
+              <i class="bi bi-three-dots menu-icon"></i>
+            </div>
+            <div class="post-image">
+              <img src="Screenshot 2025-05-04 123903.png" alt="Post content">
+            </div>
+            <div class="post-actions">
+              <i id="likeIcon" class="bi bi-heart"></i>
+              <i class="bi bi-chat"></i>
+              <i class="bi bi-send"></i>
+              <i class="bi bi-bookmark save-icon"></i>
+            </div>
+            <div class="likes">Liked by <strong>princesharma</strong> and <strong>others</strong></div>
+            <div id="commentList" class="comment-list"></div>
+            <div class="caption">
+              <strong>kunalsahu</strong> jai shree ram</div>      
+            <div class="timestamp" id="timestamp"></div>
+            <div class="post-comment-box">
+              <input type="text" id="commentInput" placeholder="Add a comment...">
+              <button onclick="submitComment()">Post</button>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="post-container">
+            <div class="post-header">
+              <img src="Screenshot 2025-05-04 123903.png" alt="Profile" class="avatar">
+              <div class="user-info">
+                <span class="username">kunalsahu</span>
+                <span class="time">16 h</span>
+              </div>
+              <i class="bi bi-three-dots menu-icon"></i>
+            </div>
+            <div class="post-image">
+              <img src="Screenshot 2025-05-04 123903.png" alt="Post content">
+            </div>
+            <div class="post-actions">
+              <i id="likeIcon" class="bi bi-heart"></i>
+              <i class="bi bi-chat"></i>
+              <i class="bi bi-send"></i>
+              <i class="bi bi-bookmark save-icon"></i>
+            </div>
+            <div class="likes">Liked by <strong>princesharma</strong> and <strong>others</strong></div>
+            <div id="commentList" class="comment-list"></div>
+            <div class="caption">
+              <strong>kunalsahu</strong> jai shree ram</div>      
+            <div class="timestamp" id="timestamp"></div>
+            <div class="post-comment-box">
+              <input type="text" id="commentInput" placeholder="Add a comment...">
+              <button onclick="submitComment()">Post</button>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="post-container">
+            <div class="post-header">
+              <img src="Screenshot 2025-05-04 123903.png" alt="Profile" class="avatar">
+              <div class="user-info">
+                <span class="username">kunalsahu</span>
+                <span class="time">16 h</span>
+              </div>
+              <i class="bi bi-three-dots menu-icon"></i>
+            </div>
+            <div class="post-image">
+              <img src="Screenshot 2025-05-04 123903.png" alt="Post content">
+            </div>
+            <div class="post-actions">
+              <i id="likeIcon" class="bi bi-heart"></i>
+              <i class="bi bi-chat"></i>
+              <i class="bi bi-send"></i>
+              <i class="bi bi-bookmark save-icon"></i>
+            </div>
+            <div class="likes">Liked by <strong>princesharma</strong> and <strong>others</strong></div>
+            <div id="commentList" class="comment-list"></div>
+            <div class="caption">
+              <strong>kunalsahu</strong> jai shree ram</div>      
+            <div class="timestamp" id="timestamp"></div>
+            <div class="post-comment-box">
+              <input type="text" id="commentInput" placeholder="Add a comment...">
+              <button onclick="submitComment()">Post</button>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="post-container">
+            <div class="post-header">
+              <img src="Screenshot 2025-05-04 123903.png" alt="Profile" class="avatar">
+              <div class="user-info">
+                <span class="username">kunalsahu</span>
+                <span class="time">16 h</span>
+              </div>
+              <i class="bi bi-three-dots menu-icon"></i>
+            </div>
+            <div class="post-image">
+              <img src="Screenshot 2025-05-04 123903.png" alt="Post content">
+            </div>
+            <div class="post-actions">
+              <i id="likeIcon" class="bi bi-heart"></i>
+              <i class="bi bi-chat"></i>
+              <i class="bi bi-send"></i>
+              <i class="bi bi-bookmark save-icon"></i>
+            </div>
+            <div class="likes">Liked by <strong>princesharma</strong> and <strong>others</strong></div>
+            <div id="commentList" class="comment-list"></div>
+            <div class="caption">
+              <strong>kunalsahu</strong> jai shree ram</div>      
+            <div class="timestamp" id="timestamp"></div>
+            <div class="post-comment-box">
+              <input type="text" id="commentInput" placeholder="Add a comment...">
+              <button onclick="submitComment()">Post</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="slider-btn right" id="nextBtn">&#10095;</button>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Collegeinfo</h3>
+          <p class="footer-desc">
+            Collegeinfo is your one-stop portal for all academic updates—admissions, results, events, and more. Stay informed, stay ahead.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Results</a></li>
+            <li><a href="#">Scholarships</a></li>
+            <li><a href="#">Events</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Connect With Us</h4>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Collegeinfo. All rights reserved. Crafted with <span>❤️</span> for students.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

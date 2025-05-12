@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collegeinfo Login</title>
+    <link rel="stylesheet" href="/login.css">
+    <link rel="stylesheet" href="login.css"> <!-- Make sure your CSS is inside the public folder -->
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>College info</h1>
+        <!-- Change the action URL to match your server's port (likely 3000) -->
+        <form action="http://localhost:8080/user/login" method="POST">
+            <input type="text" name="email" placeholder="Phone number or email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Log in</button>
+            <!-- You can add an actual forgot password link or keep this placeholder -->
+            <a href="#" class="forgot">Forgot password?</a>
+        </form>
+        <div class="signup">
+            <p><strong>Don't have an account?</strong></p>
+            <!-- The link here is correct for navigating to the sign-up page -->
+            <a href="sign.html">Sign up</a>
+        </div>
+        <p class="terms">
+            <strong>By continuing, you agree to Collegeinfo Terms of Use and Privacy Policy.</strong>
+        </p>
+    </div>
+</body>  
+
+</html>

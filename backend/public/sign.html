@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collegeinfo Sign in</title>
+    <link rel="stylesheet" href="sign.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <h1><em>College info</em></h1>
+        <form action="http://localhost:8080/user/register" method="POST">
+            <input type="text" name="email" placeholder="Phone number or email" required>
+            <input type="text" name="collage_id" placeholder="Enter your College Id" required>
+            <select name="University" >
+                <option selected disabled>Select University</option>
+                <option>Bikaner Technical University</option>
+                <option>Rajasthan Technical University</option>
+                <option>Delhi University</option>
+                <option>Other</option>
+            </select>
+
+            <!-- College Dropdown -->
+            <select name="collage" >
+                <option selected disabled>Select College</option>
+                <option>Government Engineering College Bikaner</option>
+                <option>Poornima College of Engineering</option>
+                <option>JECRC Jaipur</option>
+                <option>Other</option>
+            </select>
+
+            <input type="password" placeholder="Password" name="password" required>
+            <button type="submit">Sign in</button>
+        </form>
+        <div class="signup">
+            <p><strong>If you have an account?</strong></p>
+            <a href="login.html">Login</a>
+        </div>
+        <p class="terms">
+            <strong>By continuing, you agree to Collegeinfo Terms of Use and Privacy Policy.</strong>
+        </p>
+    </div>
+</body>
+
+</html>
